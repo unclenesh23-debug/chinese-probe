@@ -4,10 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Проба</title>
-<meta name="description" content="Проверка iPhone перед новым приложением для китайского">
+<meta name="description" content="Проба 2: звук после записи, открытие без сети, отправка Claude">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#F6F5F2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121413" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#121413">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,26 +15,17 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
-<link rel="stylesheet" href="probe.css?v=p36d475f">
+<link rel="stylesheet" href="probe.css?v=pea993a3">
 </head>
 <body>
-<div id="app">
-  <header class="top">
-    <button class="backbtn" id="btnBack" type="button" aria-label="Назад" hidden>‹</button>
-    <div class="no" id="stepno">Проба</div>
-    <button class="sumbtn" id="btnSum" type="button">Итог</button>
-  </header>
-  <div class="bar" aria-hidden="true"><i id="barfill"></i></div>
-  <main id="view" class="view">
-    <div id="boot" class="boot">Загружаю…</div>
-  </main>
-  <footer id="foot" class="foot"></footer>
-</div>
+<header class="top"><div class="ttl" id="ttl">Проба 2</div><div class="ver">pea993a3</div></header>
+<main id="view" class="view"><div id="boot" class="boot">Загружаю…</div></main>
 <audio id="aud" preload="auto" playsinline></audio>
+<audio id="aud2" playsinline></audio>
 <div id="toast" class="toast" role="status" hidden></div>
 <noscript><p style="padding:24px">Нужен JavaScript. Открой страницу в Safari.</p></noscript>
 <script>
-/* Запасной экран: если основной скрипт не запустился (старый iPhone, обрыв связи), покажем причину. */
+/* Запасной экран: если основной скрипт не запустился (обрыв связи, старый iPhone), покажем причину. */
 window.__probeErr = [];
 window.addEventListener("error", function (e) {
   try { window.__probeErr.push(String(e.message || e.type) + (e.filename ? " @" + String(e.filename).split("/").pop() + ":" + e.lineno : "")); } catch (x) {}
@@ -48,6 +38,6 @@ setTimeout(function () {
   b.textContent = "Страница не запустилась. Скажи Claude: «" + (window.__probeErr[0] || "скрипт не загрузился") + "» и " + (navigator.userAgent || "").slice(0, 160);
 }, 4000);
 </script>
-<script src="probe.js?v=p36d475f"></script>
+<script src="probe.js?v=pea993a3"></script>
 </body>
 </html>
